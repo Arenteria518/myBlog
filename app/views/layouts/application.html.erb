@@ -11,7 +11,7 @@
 <div id="sidebar">
   <div id="logo">
     <%= link_to root_path do %>
-      <%= image_tag "logo.jpg" %>
+      Spawn Camp
     <% end %>
   </div>
 
@@ -28,7 +28,7 @@
   </ul>
   
   <% if !user_signed_in? %>
-  <p class="sign_in">Admin Login</p>
+  <p class="sign_in"><%= link_to('Admin Login', new_user_session_path)  %></p>
   <% end %>
 </div>
 
@@ -45,7 +45,7 @@
     <% if user_signed_in? %>
     <div class="buttons">
     <button class="button"><%=link_to "New Post", new_post_path %></button>
-    <button class="button">Log Out</button>
+    <button class="button"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
     </div>
     <% end %>
   </div>
